@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CommandTable xmlns="http://schemas.microsoft.com/VisualStudio/2005-10-18/CommandTable" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <Extern href="stdidcmd.h"/>
+  <Extern href="vsshlids.h"/>
+
+  <Commands package="guidPackage">
+    <Menus>
+      <Menu guid="guidPackageCommandSet" id="SitefinityAddMenu" priority="0x0200" type="MenuController">
+        <Parent guid="guidPackageCommandSet" id="SitefinityAddMenuGroup"/>
+        <Strings>
+          <ButtonText>Sitefinity</ButtonText>
+        </Strings>
+      </Menu>
+    </Menus>
+    
+    <Groups>
+      <Group guid="guidPackageCommandSet" id="SitefinityAddMenuGroup" priority="0x0600">
+        <Parent guid="solutionAddMenuCommandSet" id="SolutionAddMenu"/>
+      </Group>
+      
+      <Group guid="guidPackageCommandSet" id="DynamicCommandMenuGroup" priority="0x0100">
+        <Parent guid="guidPackageCommandSet" id="SitefinityAddMenu"/>
+      </Group>
+    </Groups>
+
+    <Buttons>
+      <Button guid="guidPackageCommandSet" id="DynamicCommandId" priority="0x0100" type="Button">
+        <Parent guid="guidPackageCommandSet" id="DynamicCommandMenuGroup" />
+        <CommandFlag>DynamicItemStart</CommandFlag>
+        <CommandFlag>DynamicVisibility</CommandFlag>
+        <CommandFlag>TextChanges</CommandFlag>
+        <Strings>
+          <ButtonText>Dynamic command</ButtonText>
+        </Strings>
+      </Button>
+    </Buttons>
+  </Commands>
+
+  <Symbols>
+    <GuidSymbol name="guidPackage" value="{c65a7dcd-f890-4bd5-9d62-c032cf4358da}" />
+
+    <GuidSymbol name="guidPackageCommandSet" value="{668f2cd7-b6fd-416b-a58a-a80112fd33f7}">
+      <IDSymbol name="DynamicCommandMenuGroup" value="0x1020" />
+      <IDSymbol name="DynamicCommandId" value="0x0100" />
+      <IDSymbol name="SitefinityAddMenu" value="0x1021" />
+      <IDSymbol name="SitefinityAddMenuGroup" value="0x1022" />
+    </GuidSymbol>
+    
+    <GuidSymbol name="solutionAddMenuCommandSet" value="{D309F791-903F-11D0-9EFC-00A0C911004F}">
+      <IDSymbol name="SolutionAddMenu" value="0x0352" />
+    </GuidSymbol>
+  </Symbols>
+</CommandTable>

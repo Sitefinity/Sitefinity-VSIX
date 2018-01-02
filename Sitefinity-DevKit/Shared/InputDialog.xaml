@@ -1,0 +1,14 @@
+﻿<Window x:Class="Sitefinity_DevKit.Shared.InputDialog"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Sitefinity_DevKit.Shared"
+             mc:Ignorable="d"
+             Width="380" Height="160" ResizeMode="NoResize" MaxHeight="600" SizeToContent="Height">
+    <Grid x:Name="Grid">
+        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Margin="25,10,0,0" Width="250" Text="Please enter the following:" x:Name="MessageTextBlock" FontSize="15"/>
+        <Button Content="Ok" HorizontalAlignment="Center" Margin="0,0,100,20" VerticalAlignment="Bottom" Width="75" Click="Ok_Click"/>
+        <Button Content="Cancel" HorizontalAlignment="Center" Margin="100,0,0,20" VerticalAlignment="Bottom" Width="75" Click="Cancel_Click"/>
+    </Grid>
+</Window>
