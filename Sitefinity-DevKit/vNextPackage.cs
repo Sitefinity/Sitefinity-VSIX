@@ -7,7 +7,6 @@ using System.Threading;
 using System.Windows.Threading;
 using System.IO;
 using Sitefinity_DevKit.Shared;
-using System.Linq;
 using System.Diagnostics;
 
 namespace Sitefinity_DevKit
