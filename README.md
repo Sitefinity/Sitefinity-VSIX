@@ -17,28 +17,28 @@ The extension can be downloaded from the Visual Studio Gallery. Supported VS ver
 **Note:** During the initial load of the first solution after extension intsallation the extension will download [Sitefinity CLI](https://github.com/Sitefinity/Sitefinity-CLI) from github releases, extract it and create a configuration file.
 
 ## Available commands
-#### Create new Resource package
-Creates a new Resource package with some basic content in it. If the ResourcePackages folder is not existing it will be created.
+#### Add new Resource package
+Adds a new Resource package with some basic content in it. If the ResourcePackages folder is not existing it will be created.
 **Parameters**:
  - Name - name of the resource package to be created
- - TemplateName - name of the template to be used in the creation. Default value is 'Default'.
+ - TemplateName - name of the template to be used in the creation. Default value is 'Bootstrap'.
 
-#### Create new Page template
-Creates a new Page template.
+#### Add new Page template
+Adds a new Page template.
 **Parameters**:
  - Name - name of the page template to be created
  - ResourcePackage - name of the resource package where the template will be created. Default value is 'Bootstrap'.
  - TemplateName - name of the template to be used in the creation. Default value is 'Default'.
 
-#### Create new Grid wiget
-Creates a new Grid widget.
+#### Add new Grid template
+Adds a new Grid template.
 **Parameters**:
  - Name - name of the grid widget to be created
  - ResourcePackage - name of the resource package where the widget will be created. Default value is 'Bootstrap'.
- - TemplateName - name of the template to be used in the creation. Default value is 'Default'.
+ - TemplateName - name of the template to be used in the creation. Default value is 'grid-6+6'.
 
-#### Create new Widget
-Creates a new Custom widget.
+#### Add new Widget
+Adds a new Custom widget.
 **Parameters**:
  - Name - name of the widget to be created
  - TemplateName - name of the template to be used in the creation. Default value is 'Default'.
