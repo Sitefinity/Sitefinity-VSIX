@@ -55,6 +55,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Commands\DynamicCommand.cs" />
+    <Compile Include="Shared\CliDownloader.cs" />
     <Compile Include="Shared\ConfigParser.cs" />
     <Compile Include="Shared\Constants.cs" />
     <Compile Include="Shared\InputDialog.xaml.cs">
@@ -160,6 +161,7 @@
     <Reference Include="PresentationFramework" />
     <Reference Include="System" />
     <Reference Include="System.Design" />
+    <Reference Include="System.IO.Compression.FileSystem" />
     <Reference Include="System.Xaml" />
     <Reference Include="WindowsBase" />
   </ItemGroup>

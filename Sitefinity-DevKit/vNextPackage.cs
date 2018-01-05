@@ -29,23 +29,23 @@ namespace Sitefinity_DevKit
                     if (commandService != null)
                     {
                         var extentionPath = Path.GetDirectoryName(this.GetType().Assembly.Location);
-                        var exePath = Path.Combine(extentionPath, Constants.CLIName);
+                        var exePath = Path.Combine(extentionPath, Constants.CLIFolderName, Constants.CLIName);
+                        var configPath = Path.Combine(extentionPath, Constants.CLIFolderName, Constants.ConfigFileName);
 
-                        if (!File.Exists(exePath))
+                        CliDownloader.SetUp(exePath);
+
+                        if (!File.Exists(configPath))
                         {
-                            return;
+                            var process = new Process();
+                            process.StartInfo.RedirectStandardOutput = true;
+                            process.StartInfo.UseShellExecute = false;
+                            process.StartInfo.CreateNoWindow = true;
+                            process.StartInfo.FileName = exePath;
+                            process.StartInfo.Arguments = "config";
+                            process.Start();
+                            process.WaitForExit();
                         }
 
-                        var process = new Process();
-                        process.StartInfo.RedirectStandardOutput = true;
-                        process.StartInfo.UseShellExecute = false;
-                        process.StartInfo.CreateNoWindow = true;
-                        process.StartInfo.FileName = exePath;
-                        process.StartInfo.Arguments = "config";
-                        process.Start();
-                        process.WaitForExit();
-
-                        var configPath = Path.Combine(extentionPath, Constants.ConfigFileName);
                         this.configParser = new ConfigParser(configPath);
                         var dynamicCommandRootId = new CommandID(PackageGuids.guidPackageCommandSet, PackageIds.DynamicCommandId);
                         var dynamicCommand = new DynamicCommand(dynamicCommandRootId, IsValidDynamicItem, OnInvokedDynamicItem, OnBeforeQueryStatusDynamicItem);
@@ -62,10 +62,10 @@ namespace Sitefinity_DevKit
             var currentProjectPath = VSHelpers.GetCurrentProjectPath();
 
             var extentionPath = Path.GetDirectoryName(this.GetType().Assembly.Location);
-            var exePath = Path.Combine(extentionPath, Constants.CLIName);
+            var exePath = Path.Combine(extentionPath, Constants.CLIFolderName, Constants.CLIName);
             if (!File.Exists(exePath))
             {
-                string message = "File 'sf-cli.exe' does not exist!";
+                string message = "File 'sf.exe' does not exist!";
                 VSHelpers.ShowErrorMessage(this, message, commandConfig.Title);
                 return;
             }

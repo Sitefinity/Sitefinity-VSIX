@@ -3,7 +3,7 @@ using System.IO;
 
 namespace Sitefinity_DevKit.Shared
 {
-    public class ConfigParser
+    internal class ConfigParser
     {
         public ConfigParser(string pathToConfigFile)
         {
