@@ -1,9 +1,9 @@
-﻿<Window x:Class="Sitefinity_DevKit.Shared.InputDialog"
+﻿<Window x:Class="Sitefinity_VSIX.Shared.InputDialog"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:Sitefinity_DevKit.Shared"
+             xmlns:local="clr-namespace:Sitefinity_VSIX.Shared"
              mc:Ignorable="d"
              Width="380" Height="160" ResizeMode="NoResize" MaxHeight="600" SizeToContent="Height">
     <Grid x:Name="Grid">

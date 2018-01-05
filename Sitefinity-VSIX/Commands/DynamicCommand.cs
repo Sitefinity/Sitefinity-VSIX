@@ -2,7 +2,7 @@
 using System.ComponentModel.Design;
 using Microsoft.VisualStudio.Shell;
 
-namespace Sitefinity_DevKit.Commands
+namespace Sitefinity_VSIX.Commands
 {
     internal sealed class DynamicCommand : OleMenuCommand
     {

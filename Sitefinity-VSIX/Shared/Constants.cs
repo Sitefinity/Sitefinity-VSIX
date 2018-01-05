@@ -1,4 +1,4 @@
-﻿namespace Sitefinity_DevKit.Shared
+﻿namespace Sitefinity_VSIX.Shared
 {
     internal class Constants
     {

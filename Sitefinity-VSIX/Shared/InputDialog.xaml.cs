@@ -2,7 +2,7 @@
 using System.Windows;
 using System.Windows.Controls;
 
-namespace Sitefinity_DevKit.Shared
+namespace Sitefinity_VSIX.Shared
 {
     public partial class InputDialog : Window
     {

@@ -4,7 +4,7 @@ using Microsoft.VisualStudio.Shell;
 using Microsoft.VisualStudio.Shell.Interop;
 using System.IO;
 
-namespace Sitefinity_DevKit.Shared
+namespace Sitefinity_VSIX.Shared
 {
     internal static class VSHelpers
     {

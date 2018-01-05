@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.IO;
 
-namespace Sitefinity_DevKit.Shared
+namespace Sitefinity_VSIX.Shared
 {
     public class ConfigParser
     {

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Sitefinity_DevKit
+namespace Sitefinity_VSIX
 {
     internal sealed partial class PackageGuids
     {

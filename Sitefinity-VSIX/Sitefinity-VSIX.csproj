@@ -23,8 +23,8 @@
     <ProjectGuid>{4476C8C5-5A49-42DB-AD78-B1C7D787D4F4}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Sitefinity_DevKit</RootNamespace>
-    <AssemblyName>Sitefinity-DevKit</AssemblyName>
+    <RootNamespace>Sitefinity_VSIX</RootNamespace>
+    <AssemblyName>Sitefinity-VSIX</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <GeneratePkgDefFile>true</GeneratePkgDefFile>
     <IncludeAssemblyInVSIXContainer>true</IncludeAssemblyInVSIXContainer>

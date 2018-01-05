@@ -1,5 +1,5 @@
-# Sitefinity DevKit
-Sitefinity DevKit is a Visual Studio extension that allows developers to create Sitefinity related resources.
+# Sitefinity VSIX
+Sitefinity VSIX is a Visual Studio extension that allows developers to create Sitefinity related resources.
 
 ## Installation
 The extension can be downloaded from the Visual Studio Gallery. Supported VS versions are 2015 and 2017.

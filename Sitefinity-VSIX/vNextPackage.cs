@@ -2,14 +2,14 @@
 using System.ComponentModel.Design;
 using System.Runtime.InteropServices;
 using Microsoft.VisualStudio.Shell;
-using Sitefinity_DevKit.Commands;
+using Sitefinity_VSIX.Commands;
 using System.Threading;
 using System.Windows.Threading;
 using System.IO;
-using Sitefinity_DevKit.Shared;
+using Sitefinity_VSIX.Shared;
 using System.Diagnostics;
 
-namespace Sitefinity_DevKit
+namespace Sitefinity_VSIX
 {
     [PackageRegistration(UseManagedResourcesOnly = true)]
     [InstalledProductRegistration("#110", "#112", "1.0")]
