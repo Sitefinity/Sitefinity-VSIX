@@ -30,13 +30,16 @@ namespace Sitefinity_VSIX
                     {
                         var extentionPath = Path.GetDirectoryName(this.GetType().Assembly.Location);
                         var exePath = Path.Combine(extentionPath, Constants.CLIName);
+                        var fileInfo = new FileInfo(exePath);
 
-                        if (!File.Exists(exePath))
+                        if (!fileInfo.Exists)
                         {
                             return;
                         }
 
                         var process = new Process();
+                        process.StartInfo.FileName = fileInfo.Name;
+                        process.StartInfo.WorkingDirectory = fileInfo.DirectoryName;
                         process.StartInfo.RedirectStandardOutput = true;
                         process.StartInfo.UseShellExecute = false;
                         process.StartInfo.CreateNoWindow = true;
@@ -63,7 +66,9 @@ namespace Sitefinity_VSIX
 
             var extentionPath = Path.GetDirectoryName(this.GetType().Assembly.Location);
             var exePath = Path.Combine(extentionPath, Constants.CLIName);
-            if (!File.Exists(exePath))
+            var fileInfo = new FileInfo(exePath);
+
+            if (!fileInfo.Exists)
             {
                 string message = "File 'sf-cli.exe' does not exist!";
                 VSHelpers.ShowErrorMessage(this, message, commandConfig.Title);
@@ -99,7 +104,12 @@ namespace Sitefinity_VSIX
                 }
 
                 args = String.Format("{0} -r \"{1}\"", args, currentProjectPath);
-                var proc = System.Diagnostics.Process.Start(exePath, args);
+
+                var process = new Process();
+                process.StartInfo.FileName = fileInfo.Name;
+                process.StartInfo.WorkingDirectory = fileInfo.DirectoryName;
+                process.StartInfo.Arguments = args;
+                process.Start();
             }
         }
 

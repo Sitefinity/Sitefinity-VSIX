@@ -18,6 +18,10 @@ namespace Sitefinity_VSIX.Shared
         public static string GetCurrentProjectPath()
         {
             var project = VSHelpers.DTE.SelectedItems.Item(1)?.Project;
+            if (project == null)
+            {
+                project = VSHelpers.DTE.SelectedItems.Item(1)?.ProjectItem.ContainingProject;
+            }
 
             string projectFilePath = project.FullName;
             return Path.GetDirectoryName(projectFilePath);
