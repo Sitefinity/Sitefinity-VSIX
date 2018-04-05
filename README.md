@@ -14,7 +14,7 @@ The extension can be downloaded from the Visual Studio Gallery. Supported VS ver
 * A window will pop up asking you to fill the information needed for command execution.
 ![Menu](images/window.PNG)
 
-**Note:** During the initial load of the first solution after extension intsallation the extension will download [Sitefinity CLI](https://github.com/Sitefinity/Sitefinity-CLI) from github releases, extract it and create a configuration file.
+**Note:** During the initial load of the first solution after extension installation the extension will download [Sitefinity CLI](https://github.com/Sitefinity/Sitefinity-CLI) from github releases, extract it and create a configuration file.
 
 ## Available commands
 #### Add new Resource package
