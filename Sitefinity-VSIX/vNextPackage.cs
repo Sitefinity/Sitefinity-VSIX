@@ -29,26 +29,27 @@ namespace Sitefinity_VSIX
                     if (commandService != null)
                     {
                         var extentionPath = Path.GetDirectoryName(this.GetType().Assembly.Location);
-                        var exePath = Path.Combine(extentionPath, Constants.CLIName);
-                        var fileInfo = new FileInfo(exePath);
+                        var exePath = Path.Combine(extentionPath, Constants.CLIFolderName, Constants.CLIName);
+                        var configPath = Path.Combine(extentionPath, Constants.CLIFolderName, Constants.ConfigFileName);
+
+                        CliDownloader.SetUp(exePath);
+
+                        var fileInfo = new FileInfo(configPath);
 
                         if (!fileInfo.Exists)
                         {
-                            return;
+                            var process = new Process();
+                            process.StartInfo.FileName = fileInfo.Name;
+                            process.StartInfo.WorkingDirectory = fileInfo.DirectoryName;
+                            process.StartInfo.RedirectStandardOutput = true;
+                            process.StartInfo.UseShellExecute = false;
+                            process.StartInfo.CreateNoWindow = true;
+                            process.StartInfo.FileName = exePath;
+                            process.StartInfo.Arguments = "config";
+                            process.Start();
+                            process.WaitForExit();
                         }
-
-                        var process = new Process();
-                        process.StartInfo.FileName = fileInfo.Name;
-                        process.StartInfo.WorkingDirectory = fileInfo.DirectoryName;
-                        process.StartInfo.RedirectStandardOutput = true;
-                        process.StartInfo.UseShellExecute = false;
-                        process.StartInfo.CreateNoWindow = true;
-                        process.StartInfo.FileName = exePath;
-                        process.StartInfo.Arguments = "config";
-                        process.Start();
-                        process.WaitForExit();
-
-                        var configPath = Path.Combine(extentionPath, Constants.ConfigFileName);
+                        
                         this.configParser = new ConfigParser(configPath);
                         var dynamicCommandRootId = new CommandID(PackageGuids.guidPackageCommandSet, PackageIds.DynamicCommandId);
                         var dynamicCommand = new DynamicCommand(dynamicCommandRootId, IsValidDynamicItem, OnInvokedDynamicItem, OnBeforeQueryStatusDynamicItem);
@@ -65,12 +66,12 @@ namespace Sitefinity_VSIX
             var currentProjectPath = VSHelpers.GetCurrentProjectPath();
 
             var extentionPath = Path.GetDirectoryName(this.GetType().Assembly.Location);
-            var exePath = Path.Combine(extentionPath, Constants.CLIName);
+            var exePath = Path.Combine(extentionPath, Constants.CLIFolderName, Constants.CLIName);
             var fileInfo = new FileInfo(exePath);
 
             if (!fileInfo.Exists)
             {
-                string message = "File 'sf-cli.exe' does not exist!";
+                string message = "File 'sf.exe' does not exist!";
                 VSHelpers.ShowErrorMessage(this, message, commandConfig.Title);
                 return;
             }
