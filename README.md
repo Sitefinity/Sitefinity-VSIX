@@ -15,18 +15,12 @@ For more information, see [Sitefinity CLI](https://github.com/Sitefinity/Sitefin
 ## Use Sitefinity VSIX
 
 1. Open your Sitefinity CMS solution in Visual Studio.
-2. In the context menu of SitefinityWebApp project, click Add >> Sitefinity.
+2. In the context menu of SitefinityWebApp project, click *Add >> Sitefinity.
 
    A submenu with available options expands.
 3. Click the resource that you want to create.
 4. A dialog appears, where you must fill out the information needed to create the resource. 
 ![Menu](images/menu.PNG)
-
-* Click on a command to execute it.
-* A window will pop up asking you to fill the information needed for command execution.
-![Menu](images/window.PNG)
-
-**Note:** During the initial load of the first solution after extension installation the extension will download [Sitefinity CLI](https://github.com/Sitefinity/Sitefinity-CLI) from github releases, extract it and create a configuration file.
 
 ## Available commands
 #### Resource package
