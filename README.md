@@ -6,8 +6,8 @@ The extension can be downloaded from the Visual Studio Gallery. Supported VS ver
 
 ## How to use
 
-* Open Sitefinity solution with Visual Studio. 
-* Right click on the SitefinityWebApp project. In the Add submenu there is a Sitefinity menu. Inside this menu are listed all available commands.
+1 Open Sitefinity solution with Visual Studio. 
+2 Right click on the SitefinityWebApp project. In the Add submenu there is a Sitefinity menu. Inside this menu are listed all available commands.
 ![Menu](images/menu.PNG)
 
 * Click on a command to execute it.
