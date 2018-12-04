@@ -1,16 +1,16 @@
 =========================================================================
-==  NOTICE file corresponding to section 4 d of            	 	  ==
-==  the Apache License, Version 2.0,                                   ==
-==  in this case for Progress Sitefinity VSIX v1                       ==
+==Â  NOTICE file corresponding to section 4 d ofÂ Â Â Â Â  Â Â Â Â Â  	 	  ==
+==Â  the Apache License, Version 2.0,Â Â Â Â Â Â Â Â Â Â Â Â Â  Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â   ==
+==Â  in this case for Progress Sitefinity VSIX v1Â Â  Â Â Â Â  Â Â Â Â Â Â Â Â Â Â      ==
 =========================================================================
 
-Progress Sitefinity VSIX v1 (the “Product”)
+Progress Sitefinity VSIX v1 (the â€œProductâ€)
 
-Copyright © 2018 Telerik AD. All rights reserved.
+Copyright Â© 2018 Progress Software Corporation and/or one of its subsidiaries or affiliates. All rights reserved.
 
 For license information see the LICENSE.md file which accompanies this NOTICE.txt file.
 
-Portions of the Product include certain non-proprietary open source and commercial third-party components listed below (“Third-Party Components”). The authors of the Third-Party Components require Telerik AD (“Telerik”) to include the following notices and additional licensing terms as a condition of Telerik’s use of such Third-Party Components.  You acknowledge that the authors of the Third-Party Components have no obligation to provide support to you for the Third-Party Components or the Product.  You hereby undertake to comply with all licenses related to the applicable Third-Party Components.
+Portions of the Product include certain open source and commercial third-party components listed below (â€œThird-Party Componentsâ€). The authors of the Third-Party Components require Progress Software Corporation (â€œPSCâ€) to include the following notices and additional licensing terms as a condition of PSCâ€™s use of such Third-Party Components.  You acknowledge that the authors of the Third-Party Components have no obligation to provide support to you for the Third-Party Components or the Product.  You hereby undertake to comply with all licenses related to the applicable Third-Party Components.  Notwithstanding anything to the contrary, to the extent that any of the terms and conditions of the Product Agreement conflict, vary, or are in addition to the terms and conditions of the aforementioned third-party licenses for these technology, such terms and conditions are offered by PSC alone and not by any other party.
 
 1.	Special Notices Regarding Open Source Third-Party Components incorporated in the Product:
 
@@ -23,11 +23,10 @@ Permission is hereby granted, free of charge, to any person obtaining a copy of 
 The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-2.	Special Notices Regarding Commercially Licensed Third-Party Components incorporated in the Product:  None
-
+2.	Special Notices Regarding Commercially Licensed Third-Party Components incorporated in the Product:  NONE
 
  
-NOTICE FROM TELERIK AD: Additional notices may be included in the release notes or other documentation that accompanies updates received in connection with support of the Product.
+NOTICE FROM PROGRESS SOFTWARE CORPORATION: Additional notices may be included in the release notes or other documentation that accompanies updates received in connection with support of the Product.
 
 
-3/22/2018
+11/20/2018
