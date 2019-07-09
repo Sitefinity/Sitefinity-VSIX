@@ -54,6 +54,10 @@ namespace Sitefinity_VSIX
                         var dynamicCommandRootId = new CommandID(PackageGuids.guidPackageCommandSet, PackageIds.DynamicCommandId);
                         var dynamicCommand = new DynamicCommand(dynamicCommandRootId, IsValidDynamicItem, OnInvokedDynamicItem, OnBeforeQueryStatusDynamicItem);
                         commandService.AddCommand(dynamicCommand);
+
+                        var aboutCommandRootId = new CommandID(PackageGuids.guidPackageCommandSet, PackageIds.AboutCommandId);
+                        var aboutCommand = new AboutCommand(OnInvokeAboutCommand, aboutCommandRootId, exePath);
+                        commandService.AddCommand(aboutCommand);
                     }
                 });
             }
@@ -127,6 +131,17 @@ namespace Sitefinity_VSIX
 
             // Clear the ID because we are done with this item.  
             matchedCommand.MatchedCommandId = 0;
+        }
+
+        private void OnInvokeAboutCommand(object sender, EventArgs args)
+        {
+            if (sender is AboutCommand command)
+            {
+                VSHelpers.ShowMessage(this, $"Sitefinity VSIX version {command.VsixVersion}\n\r" +
+                    $"Sitefinity CLI version {command.CliVersion}\n\r\n\r" +
+                    $"Copyright © {DateTime.Today.Year.ToString()} Progress Software Corporation and/or one of its subsidiaries or affiliates. All rights reserved.",
+                    "About Sitefinity VSIX");
+            }
         }
 
         private bool IsValidDynamicItem(int commandId)
