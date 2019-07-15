@@ -59,3 +59,13 @@ Sitefinity VSIX will automatically try to detect the version of your Sitefinity 
 
 ## Template generation and custom templates
 For more information about templates generation and custom templates see the [Sitefinity CLI repository](https://github.com/Sitefinity/Sitefinity-CLI) 
+
+## Known issues
+#### Visual Studio 2015 integration
+Sitefinity VSIX/CLI correctly updates the csproj and sln files but Visual Studio 2015 won't refresh the solution correctly. 
+The workaround is to reopen the solution
+
+#### Visual Studio freeze/crash bug
+When Sitefinity VSIX is installed for the first time or there is a newer version of Sitefinity CLI, Visual Studio freezes until CLI is downloaded and unzipped and in some cases crashes. 
+
+After Sitefinity CLI is downloaded and unzipped Visual Studio restores it's normal behaviour
