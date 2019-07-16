@@ -49,7 +49,7 @@ namespace Sitefinity_VSIX
                             process.Start();
                             process.WaitForExit();
                         }
-                        
+
                         this.configParser = new ConfigParser(configPath);
                         var dynamicCommandRootId = new CommandID(PackageGuids.guidPackageCommandSet, PackageIds.DynamicCommandId);
                         var dynamicCommand = new DynamicCommand(dynamicCommandRootId, IsValidDynamicItem, OnInvokedDynamicItem, OnBeforeQueryStatusDynamicItem);
@@ -123,10 +123,10 @@ namespace Sitefinity_VSIX
             OleMenuCommand matchedCommand = (OleMenuCommand)sender;
             matchedCommand.Enabled = true;
             matchedCommand.Visible = true;
-            
+
             bool isRootItem = (matchedCommand.MatchedCommandId == 0);
             int commandIndex = isRootItem ? 0 : (matchedCommand.MatchedCommandId - (int)PackageIds.DynamicCommandId);
-            
+
             matchedCommand.Text = configParser.Commands[commandIndex].Title;
 
             // Clear the ID because we are done with this item.  
@@ -137,9 +137,7 @@ namespace Sitefinity_VSIX
         {
             if (sender is AboutCommand command)
             {
-                VSHelpers.ShowMessage(this, $"Sitefinity VSIX version {command.VsixVersion}\n\r" +
-                    $"Sitefinity CLI version {command.CliVersion}\n\r\n\r" +
-                    command.LicenseInfo;
+                VSHelpers.ShowMessage(this, command.AboutMessage, command.AboutTitle);
             }
         }
 
