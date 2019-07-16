@@ -33,6 +33,8 @@ namespace Sitefinity_VSIX.Commands
         public Version VsixVersion => this.vsixVersion;
         public Version CliVersion => this.cliVersion;
 
+        public string LicenseInfo => $"Copyright © {DateTime.Today.Year.ToString()} Progress Software Corporation and/or one of its subsidiaries or affiliates. All rights reserved.";
+
         private Version vsixVersion;
         private Version cliVersion;
     }

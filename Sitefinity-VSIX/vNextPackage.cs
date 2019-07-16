@@ -139,8 +139,7 @@ namespace Sitefinity_VSIX
             {
                 VSHelpers.ShowMessage(this, $"Sitefinity VSIX version {command.VsixVersion}\n\r" +
                     $"Sitefinity CLI version {command.CliVersion}\n\r\n\r" +
-                    $"Copyright © {DateTime.Today.Year.ToString()} Progress Software Corporation and/or one of its subsidiaries or affiliates. All rights reserved.",
-                    "About Sitefinity VSIX");
+                    command.LicenseInfo;
             }
         }
 
