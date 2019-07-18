@@ -53,9 +53,35 @@ Adds a new custom widget.
 Parameters:
  - *Name* - Enter the name of the widget that you want to create.
  - *TemplateName* - Enter the name of the template that you want to use in the creation. The default value is *Default*.
+ 
+#### Module
+Adds a new custom module. The generated structure demonstrates how a custom module can be implemented and integrated with Sitefinity CMS. 
+Parameters:
+ - *Name* - Enter the name of the custom module that you want to create. 
+ - *Description* – Enter the description of the custom module that you want to create. 
+ - *TemplateName* - Enter the name of the template that you want to use for creating your module. Different templates define different implementation structure for the sample module. The default value is *Default*.
+
+#### Integration tests
+Adds a new integration tests project, customized to work with Sitefinity CMS. Contains the integration test classes and instructions for implementation. 
+Parameters:
+ - *Name* - Enter the name of the integration tests project that you want to create. 
+ - *TemplateName* - Enter the name of the template that you want to use for creating your integration tests project. Different templates define different implementation structure for the sample project. The default value is *Default*.
+ 
+#### About
+Provides information about the currently installed version of Sitefinity VSIX 
 
 ## Sitefinity version
 Sitefinity VSIX will automatically try to detect the version of your Sitefinity CMS project and use the respective templates. If the version cannot be detected, Sitefinity VSIX uses the latest available version of the templates.
 
 ## Template generation and custom templates
 For more information about templates generation and custom templates see the [Sitefinity CLI repository](https://github.com/Sitefinity/Sitefinity-CLI) 
+
+## Known issues
+#### Visual Studio 2015 integration
+Sitefinity VSIX/CLI correctly updates the csproj and sln files but Visual Studio 2015 won't refresh the solution correctly. 
+The workaround is to reopen the solution
+
+#### Visual Studio freeze/crash bug
+When Sitefinity VSIX is installed for the first time or there is a newer version of Sitefinity CLI, Visual Studio freezes until CLI is downloaded and unzipped and in some cases crashes. 
+
+After Sitefinity CLI is downloaded and unzipped Visual Studio restores it's normal behaviour
