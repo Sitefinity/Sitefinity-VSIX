@@ -22,10 +22,6 @@
       <Group guid="guidPackageCommandSet" id="DynamicCommandMenuGroup" priority="0x0100">
         <Parent guid="guidPackageCommandSet" id="SitefinityAddMenu"/>
       </Group>
-
-      <Group guid="guidPackageCommandSet" id="AboutCommandMenuGroup" priority="0x101">
-        <Parent guid="guidPackageCommandSet" id="SitefinityAddMenu"/>
-      </Group>
     </Groups>
 
     <Buttons>
@@ -38,15 +34,6 @@
           <ButtonText>Dynamic command</ButtonText>
         </Strings>
       </Button>
-      <Button guid="guidPackageCommandSet" id="AboutCommandId" priority="0x101" type="Button">
-        <Parent guid="guidPackageCommandSet" id="AboutCommandMenuGroup"/>
-        <CommandFlag>DynamicItemStart</CommandFlag>
-        <CommandFlag>DynamicVisibility</CommandFlag>
-        <CommandFlag>TextChanges</CommandFlag>
-        <Strings>
-          <ButtonText>About Sitefinity VSIX</ButtonText>
-        </Strings>
-      </Button>
     </Buttons>
   </Commands>
 
@@ -56,8 +43,6 @@
     <GuidSymbol name="guidPackageCommandSet" value="{668f2cd7-b6fd-416b-a58a-a80112fd33f7}">
       <IDSymbol name="DynamicCommandMenuGroup" value="0x1020" />
       <IDSymbol name="DynamicCommandId" value="0x0100" />
-      <IDSymbol name="AboutCommandMenuGroup" value="0x1023"/>
-      <IDSymbol name="AboutCommandId" value="0x0200" />
       <IDSymbol name="SitefinityAddMenu" value="0x1021" />
       <IDSymbol name="SitefinityAddMenuGroup" value="0x1022" />
     </GuidSymbol>

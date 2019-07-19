@@ -1,5 +1,4 @@
 ﻿using System;
-using System.ComponentModel.Design;
 
 namespace Sitefinity_VSIX
 {
@@ -14,6 +13,5 @@ namespace Sitefinity_VSIX
     internal sealed partial class PackageIds
     {
         public const int DynamicCommandId = 0x0100;
-        public const int AboutCommandId = 0x200;
     }
 }

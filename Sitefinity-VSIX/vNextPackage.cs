@@ -11,11 +11,11 @@ using System.Diagnostics;
 
 namespace Sitefinity_VSIX
 {
-    [PackageRegistration(AllowsBackgroundLoading = true, UseManagedResourcesOnly = true)]
+    [PackageRegistration(UseManagedResourcesOnly = true)]
     [InstalledProductRegistration("#110", "#112", "1.0")]
     [ProvideMenuResource("Menus.ctmenu", 1)]
     [Guid(PackageGuids.guidPackageString)]
-    [ProvideAutoLoad("f1536ef8-92ec-443c-9ed7-fdadf150da82", PackageAutoLoadFlags.BackgroundLoad)]
+    [ProvideAutoLoad("f1536ef8-92ec-443c-9ed7-fdadf150da82")]
     public sealed class vNextPackage : AsyncPackage
     {
         private ConfigParser configParser;
@@ -49,15 +49,11 @@ namespace Sitefinity_VSIX
                             process.Start();
                             process.WaitForExit();
                         }
-
+                        
                         this.configParser = new ConfigParser(configPath);
                         var dynamicCommandRootId = new CommandID(PackageGuids.guidPackageCommandSet, PackageIds.DynamicCommandId);
                         var dynamicCommand = new DynamicCommand(dynamicCommandRootId, IsValidDynamicItem, OnInvokedDynamicItem, OnBeforeQueryStatusDynamicItem);
                         commandService.AddCommand(dynamicCommand);
-
-                        var aboutCommandRootId = new CommandID(PackageGuids.guidPackageCommandSet, PackageIds.AboutCommandId);
-                        var aboutCommand = new AboutCommand(OnInvokeAboutCommand, aboutCommandRootId, exePath);
-                        commandService.AddCommand(aboutCommand);
                     }
                 });
             }
@@ -123,22 +119,14 @@ namespace Sitefinity_VSIX
             OleMenuCommand matchedCommand = (OleMenuCommand)sender;
             matchedCommand.Enabled = true;
             matchedCommand.Visible = true;
-
+            
             bool isRootItem = (matchedCommand.MatchedCommandId == 0);
             int commandIndex = isRootItem ? 0 : (matchedCommand.MatchedCommandId - (int)PackageIds.DynamicCommandId);
-
+            
             matchedCommand.Text = configParser.Commands[commandIndex].Title;
 
             // Clear the ID because we are done with this item.  
             matchedCommand.MatchedCommandId = 0;
-        }
-
-        private void OnInvokeAboutCommand(object sender, EventArgs args)
-        {
-            if (sender is AboutCommand command)
-            {
-                VSHelpers.ShowMessage(this, command.AboutMessage, command.AboutTitle);
-            }
         }
 
         private bool IsValidDynamicItem(int commandId)
