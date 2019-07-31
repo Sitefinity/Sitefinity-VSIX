@@ -2,8 +2,10 @@
 {
     internal class Constants
     {
+        public const string DotNetCoreProcessName = "dotnet";
+
         public const string CLIFolderName = "cli";
-        public const string CLIName = "sf.exe";
+        public const string CLIName = "sf.dll";
         public const string ConfigFileName = "config.json";
 
         public const string ResourcePackagesFolderName = "ResourcePackages";

@@ -13,7 +13,7 @@ namespace Sitefinity_VSIX.Shared
 {
     internal class CliDownloader
     {
-        public static void SetUp(string exePath)
+        public static void SetUp(string cliPath)
         {
             // Get current version
             var currentVersion = Assembly.GetExecutingAssembly().GetName().Version;
@@ -28,21 +28,20 @@ namespace Sitefinity_VSIX.Shared
                 var latestReleaseVersion = ParseReleaseMajorVersion(latestRelease.Version);
 
                 // check if cli is already downloaded or its current version is lower than the latest release version
-                if (File.Exists(exePath))
+                if (File.Exists(cliPath))
                 {
                     // get cli version
-                    var dllPath = Path.ChangeExtension(exePath, ".dll");
-                    var versionInfo = FileVersionInfo.GetVersionInfo(dllPath);
+                    var versionInfo = FileVersionInfo.GetVersionInfo(cliPath);
                     Version cliVersion = Version.Parse(versionInfo.FileVersion);
 
                     if (cliVersion.CompareTo(latestReleaseVersion) < 0)
                     {
-                        HandleCliDownloadAndExtraction(latestRelease, exePath);
+                        HandleCliDownloadAndExtraction(latestRelease, cliPath);
                     }
                 }
                 else
                 {
-                    HandleCliDownloadAndExtraction(latestRelease, exePath);
+                    HandleCliDownloadAndExtraction(latestRelease, cliPath);
                 }
             }
         }
@@ -70,12 +69,12 @@ namespace Sitefinity_VSIX.Shared
             }
         }
 
-        private static void HandleCliDownloadAndExtraction(Release release, string exePath)
+        private static void HandleCliDownloadAndExtraction(Release release, string cliPath)
         {     
             var asset = release.Assets.Where(x => x.Name == Constants.WindowsReleaseName).FirstOrDefault();
             if (asset != null)
             {
-                var cliDirectoryName = Path.GetDirectoryName(exePath);
+                var cliDirectoryName = Path.GetDirectoryName(cliPath);
 
                 if (Directory.Exists(cliDirectoryName))
                 {

@@ -14,15 +14,14 @@ namespace Sitefinity_VSIX.Commands
 
         public AboutCommand(EventHandler handler, CommandID command, string cliPath) : base(handler, command)
         {
-            var dllPath = cliPath.Replace(".exe", ".dll");
-            if (!File.Exists(dllPath))
+            if (!File.Exists(cliPath))
             {
                 throw new FileNotFoundException();
             }
 
             this.vsixVersion = Assembly.GetExecutingAssembly().GetName().Version;
 
-            var versionInfo = FileVersionInfo.GetVersionInfo(dllPath).FileVersion;
+            var versionInfo = FileVersionInfo.GetVersionInfo(cliPath).FileVersion;
 
             if (!Version.TryParse(versionInfo, out this.cliVersion))
             {

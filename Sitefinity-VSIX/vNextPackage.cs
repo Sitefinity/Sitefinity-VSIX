@@ -29,23 +29,23 @@ namespace Sitefinity_VSIX
                     if (commandService != null)
                     {
                         var extentionPath = Path.GetDirectoryName(this.GetType().Assembly.Location);
-                        var exePath = Path.Combine(extentionPath, Constants.CLIFolderName, Constants.CLIName);
+                        var dllPath = Path.Combine(extentionPath, Constants.CLIFolderName, Constants.CLIName);
                         var configPath = Path.Combine(extentionPath, Constants.CLIFolderName, Constants.ConfigFileName);
 
-                        CliDownloader.SetUp(exePath);
+                        CliDownloader.SetUp(dllPath);
 
                         var fileInfo = new FileInfo(configPath);
 
                         if (!fileInfo.Exists)
                         {
+                            var args = string.Format("{0} config", Constants.CLIName);
                             var process = new Process();
-                            process.StartInfo.FileName = fileInfo.Name;
                             process.StartInfo.WorkingDirectory = fileInfo.DirectoryName;
                             process.StartInfo.RedirectStandardOutput = true;
                             process.StartInfo.UseShellExecute = false;
                             process.StartInfo.CreateNoWindow = true;
-                            process.StartInfo.FileName = exePath;
-                            process.StartInfo.Arguments = "config";
+                            process.StartInfo.FileName = Constants.DotNetCoreProcessName;
+                            process.StartInfo.Arguments = args;
                             process.Start();
                             process.WaitForExit();
                         }
@@ -56,7 +56,7 @@ namespace Sitefinity_VSIX
                         commandService.AddCommand(dynamicCommand);
 
                         var aboutCommandRootId = new CommandID(PackageGuids.guidPackageCommandSet, PackageIds.AboutCommandId);
-                        var aboutCommand = new AboutCommand(OnInvokeAboutCommand, aboutCommandRootId, exePath);
+                        var aboutCommand = new AboutCommand(OnInvokeAboutCommand, aboutCommandRootId, dllPath);
                         commandService.AddCommand(aboutCommand);
                     }
                 });
@@ -108,10 +108,10 @@ namespace Sitefinity_VSIX
                     }
                 }
 
-                args = String.Format("{0} -r \"{1}\"", args, currentProjectPath);
+                args = String.Format("{0} {1} -r \"{2}\"", Constants.CLIName, args, currentProjectPath);
 
                 var process = new Process();
-                process.StartInfo.FileName = fileInfo.Name;
+                process.StartInfo.FileName = Constants.DotNetCoreProcessName;
                 process.StartInfo.WorkingDirectory = fileInfo.DirectoryName;
                 process.StartInfo.Arguments = args;
                 process.Start();
