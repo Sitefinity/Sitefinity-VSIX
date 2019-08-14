@@ -89,16 +89,17 @@ namespace Sitefinity_VSIX
                 for (int i = 0; i < dialog.ResponseText.Count; i++)
                 {
                     var input = dialog.ResponseText[i];
-                    if (string.IsNullOrEmpty(input) || input.IndexOfAny(Path.GetInvalidFileNameChars()) > 0)
-                    {
-                        string message = string.Format("Invalid argument: {0}!", commandConfig.Args[i]);
-                        VSHelpers.ShowErrorMessage(this, message, commandConfig.Title);
-                        return;
-                    }
 
                     // response is argument, else - response is option
                     if (i < commandConfig.Args.Count)
                     {
+                        if (string.IsNullOrEmpty(input) || input.IndexOfAny(Path.GetInvalidFileNameChars()) > 0)
+                        {
+                            string message = string.Format("Invalid argument: {0}!", commandConfig.Args[i]);
+                            VSHelpers.ShowErrorMessage(this, message, commandConfig.Title);
+                            return;
+                        }
+
                         args = String.Format("{0} \"{1}\"", args, input);
                     }
                     else
