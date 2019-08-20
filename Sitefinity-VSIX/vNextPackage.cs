@@ -38,27 +38,16 @@ namespace Sitefinity_VSIX
 
                         if (!fileInfo.Exists)
                         {
-                            try
-                            {
-                                var args = string.Format("{0} config", Constants.CLIName);
-                                var process = new Process();
-                                process.StartInfo.WorkingDirectory = fileInfo.DirectoryName;
-                                process.StartInfo.RedirectStandardOutput = true;
-                                process.StartInfo.UseShellExecute = false;
-                                process.StartInfo.CreateNoWindow = true;
-                                process.StartInfo.FileName = Constants.DotNetCoreProcessName;
-                                process.StartInfo.Arguments = args;
-                                process.Start();
-                                process.WaitForExit();
-                            }
-                            catch (UnauthorizedAccessException)
-                            {
-                                VSHelpers.ShowErrorMessage(this, Constants.UnauthorizedErrorMessage, Constants.UnauthorizedErrorTitle);
-                            }
-                            catch
-                            {
-                                VSHelpers.ShowErrorMessage(this, Constants.GeneralErrorMessage, Constants.GeneralErrorTitle);
-                            }
+                            var args = string.Format("{0} config", Constants.CLIName);
+                            var process = new Process();
+                            process.StartInfo.WorkingDirectory = fileInfo.DirectoryName;
+                            process.StartInfo.RedirectStandardOutput = true;
+                            process.StartInfo.UseShellExecute = false;
+                            process.StartInfo.CreateNoWindow = true;
+                            process.StartInfo.FileName = Constants.DotNetCoreProcessName;
+                            process.StartInfo.Arguments = args;
+                            process.Start();
+                            process.WaitForExit();
                         }
 
                         this.configParser = new ConfigParser(configPath);
