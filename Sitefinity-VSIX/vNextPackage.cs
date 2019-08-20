@@ -38,16 +38,27 @@ namespace Sitefinity_VSIX
 
                         if (!fileInfo.Exists)
                         {
-                            var args = string.Format("{0} config", Constants.CLIName);
-                            var process = new Process();
-                            process.StartInfo.WorkingDirectory = fileInfo.DirectoryName;
-                            process.StartInfo.RedirectStandardOutput = true;
-                            process.StartInfo.UseShellExecute = false;
-                            process.StartInfo.CreateNoWindow = true;
-                            process.StartInfo.FileName = Constants.DotNetCoreProcessName;
-                            process.StartInfo.Arguments = args;
-                            process.Start();
-                            process.WaitForExit();
+                            try
+                            {
+                                var args = string.Format("{0} config", Constants.CLIName);
+                                var process = new Process();
+                                process.StartInfo.WorkingDirectory = fileInfo.DirectoryName;
+                                process.StartInfo.RedirectStandardOutput = true;
+                                process.StartInfo.UseShellExecute = false;
+                                process.StartInfo.CreateNoWindow = true;
+                                process.StartInfo.FileName = Constants.DotNetCoreProcessName;
+                                process.StartInfo.Arguments = args;
+                                process.Start();
+                                process.WaitForExit();
+                            }
+                            catch (UnauthorizedAccessException)
+                            {
+                                VSHelpers.ShowErrorMessage(this, Constants.UnauthorizedErrorMessage, Constants.UnauthorizedErrorTitle);
+                            }
+                            catch
+                            {
+                                VSHelpers.ShowErrorMessage(this, Constants.GeneralErrorMessage, Constants.GeneralErrorTitle);
+                            }
                         }
 
                         this.configParser = new ConfigParser(configPath);
@@ -90,16 +101,27 @@ namespace Sitefinity_VSIX
                 {
                     var input = dialog.ResponseText[i];
 
-                    // response is argument, else - response is option
-                    if (i < commandConfig.Args.Count)
+                    var isArgument = i < commandConfig.Args.Count;
+                    if (string.IsNullOrEmpty(input) || input.IndexOfAny(Path.GetInvalidFileNameChars()) > 0)
                     {
-                        if (string.IsNullOrEmpty(input) || input.IndexOfAny(Path.GetInvalidFileNameChars()) > 0)
+                        string message;
+
+                        if (isArgument)
                         {
-                            string message = string.Format("Invalid argument: {0}!", commandConfig.Args[i]);
-                            VSHelpers.ShowErrorMessage(this, message, commandConfig.Title);
-                            return;
+                            message = string.Format("Invalid argument: {0}!", commandConfig.Args[i]);
+                        }
+                        else
+                        {
+                            message = string.Format("Invalid argument: {0}!", commandConfig.Options[i - commandConfig.Args.Count]);
                         }
 
+                        VSHelpers.ShowErrorMessage(this, message, commandConfig.Title);
+                        return;
+                    }
+
+                    // response is argument, else - response is option
+                    if (isArgument)
+                    {
                         args = String.Format("{0} \"{1}\"", args, input);
                     }
                     else
