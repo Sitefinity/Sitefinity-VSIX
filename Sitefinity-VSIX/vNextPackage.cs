@@ -48,6 +48,14 @@ namespace Sitefinity_VSIX
                             process.StartInfo.Arguments = args;
                             process.Start();
                             process.WaitForExit();
+
+                            if (process.ExitCode != 0)
+                            {
+                                var message = Constants.GeneralErrorMessage;
+                                var title = Constants.GeneralErrorTitle;
+                                VSHelpers.ShowErrorMessage(this, message, title);
+                                return;
+                            }
                         }
 
                         this.configParser = new ConfigParser(configPath);
