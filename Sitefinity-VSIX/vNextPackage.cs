@@ -48,6 +48,28 @@ namespace Sitefinity_VSIX
                             process.StartInfo.Arguments = args;
                             process.Start();
                             process.WaitForExit();
+
+                            if (process.ExitCode != (int)ExitCode.OK)
+                            {
+                                string message;
+                                string title;
+
+                                switch (process.ExitCode)
+                                {
+                                    case (int)ExitCode.InsufficientPermissions:
+                                        message = Constants.ConfigPermissionsErrorMessage;
+                                        title = Constants.ConfigPermissionsErrorTitle;
+                                        break;
+                                    case (int)ExitCode.GeneralError:
+                                    default:
+                                        message = Constants.ConfigGeneralErrorMessage;
+                                        title = Constants.ConfigGeneralErrorTitle;
+                                        break;
+                                }
+
+                                VSHelpers.ShowErrorMessage(this, message, title);
+                                return;
+                            }
                         }
 
                         this.configParser = new ConfigParser(configPath);
@@ -89,15 +111,27 @@ namespace Sitefinity_VSIX
                 for (int i = 0; i < dialog.ResponseText.Count; i++)
                 {
                     var input = dialog.ResponseText[i];
+
+                    var isArgument = i < commandConfig.Args.Count;
                     if (string.IsNullOrEmpty(input) || input.IndexOfAny(Path.GetInvalidFileNameChars()) > 0)
                     {
-                        string message = string.Format("Invalid argument: {0}!", commandConfig.Args[i]);
+                        string message;
+
+                        if (isArgument)
+                        {
+                            message = string.Format("Invalid argument: {0}!", commandConfig.Args[i]);
+                        }
+                        else
+                        {
+                            message = string.Format("Invalid argument: {0}!", commandConfig.Options[i - commandConfig.Args.Count]);
+                        }
+
                         VSHelpers.ShowErrorMessage(this, message, commandConfig.Title);
                         return;
                     }
 
                     // response is argument, else - response is option
-                    if (i < commandConfig.Args.Count)
+                    if (isArgument)
                     {
                         args = String.Format("{0} \"{1}\"", args, input);
                     }
