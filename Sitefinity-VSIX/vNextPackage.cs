@@ -49,10 +49,24 @@ namespace Sitefinity_VSIX
                             process.Start();
                             process.WaitForExit();
 
-                            if (process.ExitCode != 0)
+                            if (process.ExitCode != (int)ExitCode.OK)
                             {
-                                var message = Constants.GeneralErrorMessage;
-                                var title = Constants.GeneralErrorTitle;
+                                string message;
+                                string title;
+
+                                switch (process.ExitCode)
+                                {
+                                    case (int)ExitCode.InsufficientPermissions:
+                                        message = Constants.ConfigPermissionsErrorMessage;
+                                        title = Constants.ConfigPermissionsErrorTitle;
+                                        break;
+                                    case (int)ExitCode.GeneralError:
+                                    default:
+                                        message = Constants.ConfigGeneralErrorMessage;
+                                        title = Constants.ConfigGeneralErrorTitle;
+                                        break;
+                                }
+
                                 VSHelpers.ShowErrorMessage(this, message, title);
                                 return;
                             }
