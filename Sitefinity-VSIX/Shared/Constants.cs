@@ -17,6 +17,7 @@
         public const string ConfigGeneralErrorTitle = "";
 
         public const string ConfigPermissionsErrorMessage = "You do not have sufficient permissions to create a CLI config file in the Extensions directory on your file system. Check the Extensions directory security properties or contact your administrator for assistance.";
+
         public const string ConfigPermissionsErrorTitle = "";
     }
 }
