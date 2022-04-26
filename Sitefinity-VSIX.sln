@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.32413.511
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32414.318
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitefinity-VSIX.VS19", "Sitefinity-VSIX\Sitefinity-VSIX.VS19.csproj", "{4476C8C5-5A49-42DB-AD78-B1C7D787D4F4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitefinity-VSIX", "Sitefinity-VSIX\Sitefinity-VSIX.csproj", "{4476C8C5-5A49-42DB-AD78-B1C7D787D4F4}"
 EndProject
 Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Sitefinity-VSIX.Shared", "Sitefinity-VSIX.Shared\Sitefinity-VSIX.Shared.shproj", "{55098D12-D255-4A29-83B2-E9B4B13CDFA5}"
 EndProject
