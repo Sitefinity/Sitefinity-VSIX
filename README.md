@@ -2,11 +2,12 @@
 Sitefinity VSIX is a Visual Studio extension that allows you to create Sitefinity CMS related resources. This way you can easily scaffold Sitefinity CMS projects. The tool is focused on facilitating the development of MVC widgets and templates.
 
 ## Installation
-Supported Visual Studio Versions: 2015, 2017 and 2019.
+Supported Visual Studio Versions: 2015, 2017, 2019 and 2022.
 
 Note: For Visual Studio 2015 and 2017 (up to Update 15.3) you first need to install [.NET Core](https://www.microsoft.com/net/download/windows) before using the extension.
 
-You can download the extension from Visual Studio Marketplace >> [Sitefinity VSIX](https://marketplace.visualstudio.com/items?itemName=vs-publisher-443.Sitefinity-VSIX).
+You can download the extension from Visual Studio Marketplace >> [Sitefinity VSIX](https://marketplace.visualstudio.com/items?itemName=vs-publisher-443.Sitefinity-VSIX).</br>
+For Visual Studio 2022 there is a separate extension available from Visual Studio Marketplace >> [Sitefinity VSIX for VS 2022](https://marketplace.visualstudio.com/items?itemName=vs-publisher-443.Sitefinity-VSIX-VS22).
 
 ## Architecture
 Sitefinity VSIX is based on Sitefinity CLI. After you install the extension, during the initial load of the first solution, the extension will download Sitefinity CLI from GitHub, extract it, and create a configuration file.
