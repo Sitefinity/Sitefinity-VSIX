@@ -18,12 +18,12 @@ SUMMARY OF COMPONENTS:
 VendorName | ComponentName | VersionName | LicenseType
 
 James Newton-King | Newtonsoft.Json | 13.0.1 - Open Source | MIT-style License 
-James Newton-King | Newtonsoft.Json | 10.0.3 - Open Source | MIT-style License 
+James Newton-King | Newtonsoft.Json | 9.0.1 - Open Source | MIT-style License 
 -------------------------------------------------------------------------
 
 1.	Special Notices Regarding Open-Source Third-Party Components incorporated in the Product:
 
-Progress Sitefinity VSIX v1 may incorporate Newtonsoft.Json v13.0.1 or Newtonsoft.Json 10.0.3.  Such technologies are subject to the following terms and conditions:
+Progress Sitefinity VSIX v1 may incorporate Newtonsoft.Json v13.0.1 or Newtonsoft.Json 9.0.1.  Such technologies are subject to the following terms and conditions:
 The MIT License (MIT)
 Copyright (c) 2007 James Newton-King
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
