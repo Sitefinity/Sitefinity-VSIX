@@ -47,7 +47,7 @@ Adds a new Page template.
 
 Parameters:
  - *Name* - Enter the name of the page template that you want to create.
- - *ResourcePackage* - Enter the name of the resource package where the template will be created. The default value is *Bootstrap*.
+ - *ResourcePackage* - Enter the name of the resource package where the template will be created. The default value is *Bootstrap5*.
  - *TemplateName* - Enter the name of the template that you want to use in the creation. The default value is *Default*.
 
 #### Grid widget
@@ -56,7 +56,7 @@ Adds a new Grid widget.
 
 Parameters:
  - *Name* - Enter the name of the grid widget that you want to create.
- - *ResourcePackage* - Enter the name of the resource package where the widget will be created. The default value is *Bootstrap*.
+ - *ResourcePackage* - Enter the name of the resource package where the widget will be created. The default value is *Bootstrap5*.
  - *TemplateName* - Enter the name of the template you want to use for the creation. The default value is *grid-6+6*.
 
 #### Widget
