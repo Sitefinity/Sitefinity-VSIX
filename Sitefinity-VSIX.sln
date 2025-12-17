@@ -1,20 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.1.32414.318
+# Visual Studio Version 18
+VisualStudioVersion = 18.1.11304.174 d18.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitefinity-VSIX", "Sitefinity-VSIX\Sitefinity-VSIX.csproj", "{4476C8C5-5A49-42DB-AD78-B1C7D787D4F4}"
 EndProject
 Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Sitefinity-VSIX.Shared", "Sitefinity-VSIX.Shared\Sitefinity-VSIX.Shared.shproj", "{55098D12-D255-4A29-83B2-E9B4B13CDFA5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitefinity-VSIX.VS22", "Sitefinity-VSIX.VS22\Sitefinity-VSIX.VS22.csproj", "{248BB80D-4109-41E8-A758-B4E23D527F7F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitefinity-VSIX.VS26", "Sitefinity-VSIX.VS26\Sitefinity-VSIX.VS26.csproj", "{248BB80D-4109-41E8-A758-B4E23D527F7F}"
 EndProject
 Global
-	GlobalSection(SharedMSBuildProjectFiles) = preSolution
-		Sitefinity-VSIX.Shared\Sitefinity-VSIX.Shared.projitems*{248bb80d-4109-41e8-a758-b4e23d527f7f}*SharedItemsImports = 4
-		Sitefinity-VSIX.Shared\Sitefinity-VSIX.Shared.projitems*{4476c8c5-5a49-42db-ad78-b1c7d787d4f4}*SharedItemsImports = 4
-		Sitefinity-VSIX.Shared\Sitefinity-VSIX.Shared.projitems*{55098d12-d255-4a29-83b2-e9b4b13cdfa5}*SharedItemsImports = 13
-	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
@@ -34,5 +29,10 @@ Global
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7EACBD48-4866-4E2A-BB54-0F71B7A097D4}
+	EndGlobalSection
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		Sitefinity-VSIX.Shared\Sitefinity-VSIX.Shared.projitems*{248bb80d-4109-41e8-a758-b4e23d527f7f}*SharedItemsImports = 4
+		Sitefinity-VSIX.Shared\Sitefinity-VSIX.Shared.projitems*{4476c8c5-5a49-42db-ad78-b1c7d787d4f4}*SharedItemsImports = 4
+		Sitefinity-VSIX.Shared\Sitefinity-VSIX.Shared.projitems*{55098d12-d255-4a29-83b2-e9b4b13cdfa5}*SharedItemsImports = 13
 	EndGlobalSection
 EndGlobal
