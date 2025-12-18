@@ -2,7 +2,7 @@
 <PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
     <Metadata>
         <Identity Id="Sitefinity_VSIX.VS22.d1542322-3a1b-46a3-9189-3a526f601f4f" Version="1.0.0.5" Language="en-US" Publisher="Telerik" />
-        <DisplayName>Sitefinity VSIX for VS 2026</DisplayName>
+        <DisplayName>Sitefinity VSIX</DisplayName>
         <Description xml:space="preserve">Visual studio extension for creating a Sitefinity related files.</Description>
     </Metadata>
     <Installation>
